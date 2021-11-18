@@ -1,0 +1,1 @@
+{"version":3,"file":"css/style.bundle.css","mappings":";;;AAAA;EACE;AACF,C","sources":["webpack://webpack5/./_ui/skin/src/scss/style.scss"],"sourcesContent":["body {\n  opacity: 0.25;\n}"],"names":[],"sourceRoot":""}
