@@ -15,7 +15,8 @@ const jsRules = {
   use: {
     loader: 'babel-loader',
     options: {
-      presets: ['@babel/preset-env']
+      presets: ['@babel/preset-env'],
+      sourceMaps: true,
     }
   }
 }
@@ -55,6 +56,14 @@ const scssRules = {
   ],
 }
 
+const imgRules = {
+  test: /\.png|\.jpg|\.jpeg/,
+  type: 'asset/resource',
+  generator: {
+    filename: 'img/[name][ext][query]'
+  },
+}
+
 module.exports = {
   entry: {
     'main.bundle': './_ui/skin/src/js/main.js',
@@ -66,11 +75,15 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js'],
+    alias: {
+      img: path.resolve('_ui/skin/src/img'),
+    }
   },
   module: {
     rules: [
       jsRules,
       scssRules,
+      imgRules,
     ],
   },
   watch: !isProduction,
